@@ -1,0 +1,48 @@
+
+
+.Titulo {
+  text-align: center;
+  color: #b9150f;
+  margin-top: 2cm;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.parrafo {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+
+.progress-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #004aad;
+}
+
+.progress {
+  height: 25px;
+  background-color: #e9ecef;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.progress-bar {
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 25px;
+  transition: width 1s ease-in-out;
+}
+
+.progress-container {
+  max-width: 700px; 
+  margin: 0 auto; 
+  text-align: left; 
+}
