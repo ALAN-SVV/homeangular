@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+<div class="container my-5">
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100 shadow">
+                <div class="card-body texte-center">
+                    <img src="images/elvis.png" alt="img" style="width: 95%;" class="elwis">
+                    <h5 class="card-title">{{ usuario1.nombre}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{usuario1.profesion}}</h6>
+                    <p class="card-text">{{usuario1.descripcion}}</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.linkedin.com/in/elvis-pachacama-410018135?trk=pub-pbmap"
+                            class="social-icon">LinkedIn<i class="fa-brands fa-github "></i></a>
+                        <a href="https://www.youtube.com/@elvispachacamacabezas1522" class="social-icon">Youtube<i
+                                class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow">
+                <div class="card-body texte-center">
+                    <img src="images/gabo.jpg" alt="img" style="width: 55% ; margin-left: 90px ;">
+                    <h5 class="card-title">{{ usuario2.nombre}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{usuario2.profesion}}</h6>
+                    <p class="card-text">{{usuario2.descripcion}}</p>
+                    <a [href]="usuario2.redes[0].link">
+                        <i [class]="usuario2.redes[0].icono"></i>{{usuario2.redes[0].nombre}}
+                    </a>
+                    <a [href]="usuario2.redes[1].link">
+                        <i [class]="usuario2.redes[1].icono"></i>{{usuario2.redes[1].nombre}}
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow">
+                <div class="card-body texte-center">
+                    <img src="images/moni.jpg" alt="img" style="width: 75%; margin-left: 45px">
+                    <h5 class="card-title">{{ usuario3.nombre}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{usuario3.profesion}}</h6>
+                    <p class="card-text">{{usuario3.descripcion}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br>
+<app-footer></app-footer>

@@ -5,6 +5,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { CarruselComponent } from './component/carrusel/carrusel.component';
 import { InformacionComponent } from './component/informacion/informacion.component';
 import { TarjetaComponent } from './component/tarjeta/tarjeta.component';
+import { ProfesComponent } from './component/profes/profes.component';
 
 export const routes: Routes = [
     {path:"home", component: HomeComponent},
@@ -12,6 +13,7 @@ export const routes: Routes = [
     {path:"footer", component: FooterComponent},
     {path: "carrusel", component: CarruselComponent},
     {path: "informacion", component:InformacionComponent},
-    {path: "tarjeta", component: TarjetaComponent}
+    {path: "tarjeta", component: TarjetaComponent},
+    {path: "profes", component: ProfesComponent}
 
 ];
