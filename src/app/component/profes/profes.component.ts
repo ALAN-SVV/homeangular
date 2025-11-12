@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from "../navbar/navbar.component";
 import { FooterComponent } from "../footer/footer.component";
+import { EstudiantesComponent } from '../estudiantes/estudiantes.component';
 
 @Component({
   selector: 'app-profes',
-  imports: [NavbarComponent,FooterComponent],
+  imports: [NavbarComponent,FooterComponent, EstudiantesComponent],
   templateUrl: './profes.component.html',
   styleUrl: './profes.component.css'
 })
@@ -29,4 +30,8 @@ export class ProfesComponent {
     descripcion:'Experta ene ncontrara patrones y extraer informacion valiosa.',
   };
 
+  mostrarDatos(usuario: any){ // Metodo para mostrar los datos, any es para el tipo de dato
+  console.log('Nombre de usuario:', usuario);
+  }
+  
 }

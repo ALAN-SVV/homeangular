@@ -14,6 +14,8 @@
                             class="social-icon">LinkedIn<i class="fa-brands fa-github "></i></a>
                         <a href="https://www.youtube.com/@elvispachacamacabezas1522" class="social-icon">Youtube<i
                                 class="fab fa-twitter"></i></a>
+                        <button class="btn btn-primary mt-3"(click)="mostrarDatos(usuario1)">Motrar Datos</button>
+
                     </div>
                 </div>
             </div>
@@ -22,9 +24,9 @@
         <div class="col">
             <div class="card h-100 shadow">
                 <div class="card-body texte-center">
-                    <img src="images/gabo.jpg" alt="img" style="width: 55% ; margin-left: 90px ;">
-                    <h5 class="card-title">{{ usuario2.nombre}}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{usuario2.profesion}}</h6>
+                    <img src="images/gabo.jpg" alt="img" style="width: 55% ; margin-left: 90px ;" (mouseover)="mostrarDatos(usuario2)"> 
+                    <h5 class="card-title" (mouseover)="mostrarDatos(usuario2)" >{{ usuario2.nombre }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted" >{{usuario2.profesion}}</h6>
                     <p class="card-text">{{usuario2.descripcion}}</p>
                     <a [href]="usuario2.redes[0].link">
                         <i [class]="usuario2.redes[0].icono"></i>{{usuario2.redes[0].nombre}}
@@ -32,6 +34,7 @@
                     <a [href]="usuario2.redes[1].link">
                         <i [class]="usuario2.redes[1].icono"></i>{{usuario2.redes[1].nombre}}
                     </a>
+                    <button class="btn btn-primary mt-3"(click)="mostrarDatos(usuario2)">Motrar Datos</button>
                 </div>
             </div>
         </div>
@@ -43,10 +46,13 @@
                     <h5 class="card-title">{{ usuario3.nombre}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{usuario3.profesion}}</h6>
                     <p class="card-text">{{usuario3.descripcion}}</p>
+                    <button class="btn btn-primary mt-3"(mouseover)="mostrarDatos(usuario3)">Motrar Datos</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<br><br><br>
+<app-estudiantes></app-estudiantes>
 <br><br><br><br><br><br><br><br><br><br><br>
 <app-footer></app-footer>
