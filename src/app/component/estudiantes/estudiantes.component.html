@@ -1,102 +1,45 @@
 <app-navbar></app-navbar>
 <br><br><br>
 <div class="container mt-4">
-  <h2>Lista de Estudiantes</h2>
-  <table class="table table-striped table-hover">
-    <thead class="table-dark">
-      <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Cédula</th>
-        <th>Carrera</th>
-        <th>Notas</th>
-        <th></th>
-      </tr>
-    </thead> 
-    <tbody>
-      <tr>
-        <td>{{ estudiante1.nombre }}</td>
-        <td>{{ estudiante1.apellido }}</td>
-        <td>{{ estudiante1.cedula }}</td>
-        <td>{{ estudiante1.carrera }}</td>
-        <td>{{ estudiante1.notas}}</td>
-        <td><button class="btn btn-primary btn-sm" (click)="MostrarDatos(estudiante1)">Enviar</button></td>
-      </tr>
-      <tr>
-        <td>{{ estudiante2.nombre }}</td>
-        <td>{{ estudiante2.apellido }}</td>
-        <td>{{ estudiante2.cedula }}</td>
-        <td>{{ estudiante2.carrera }}</td>
-        <td>{{ estudiante2.notas }}</td>
-        <td><button class="btn btn-primary btn-sm" (click)="MostrarDatos(estudiante2)">Enviar</button></td>
-      </tr>
-
-      <tr>
-        <td>{{ estudiante3.nombre }}</td>
-        <td>{{ estudiante3.apellido }}</td>
-        <td>{{ estudiante3.cedula }}</td>
-        <td>{{ estudiante3.carrera }}</td>
-        <td>{{ estudiante3.notas }}</td>
-        <td><button class="btn btn-primary btn-sm" (click)="MostrarDatos(estudiante3)">Enviar</button></td>
-      </tr>
-      <tr>
-        <td>{{ estudiante4.nombre }}</td>
-        <td>{{ estudiante4.apellido }}</td>
-        <td>{{ estudiante4.cedula }}</td>
-        <td>{{ estudiante4.carrera }}</td>
-        <td>{{ estudiante4.notas }}</td>
-        <td><button class="btn btn-primary btn-sm" (click)="MostrarDatos(estudiante4)">Enviar</button></td>
-      </tr>
-      <tr>
-        <td>{{ estudiante5.nombre }}</td>
-        <td>{{ estudiante5.apellido }}</td>
-        <td>{{ estudiante5.cedula }}</td>
-        <td>{{ estudiante5.carrera }}</td>
-        <td>{{ estudiante5.notas }}</td>
-        <td><button class="btn btn-primary btn-sm" (click)="MostrarDatos(estudiante5)">Enviar</button></td>
-      </tr>
-      <tr>
-        <td>{{ estudiante6.nombre }}</td>
-        <td>{{ estudiante6.apellido }}</td>
-        <td>{{ estudiante6.cedula }}</td>
-        <td>{{ estudiante6.carrera }}</td>
-        <td>{{ estudiante6.notas }}</td>
-        <td><button class="btn btn-primary btn-sm" (click)="MostrarDatos(estudiante6)">Enviar</button></td>
-      </tr>
-      <tr>
-        <td>{{ estudiante7.nombre }}</td>
-        <td>{{ estudiante7.apellido }}</td>
-        <td>{{ estudiante7.cedula }}</td>
-        <td>{{ estudiante7.carrera }}</td>
-        <td>{{ estudiante7.notas}}</td>
-        <td><button class="btn btn-primary btn-sm" (click)="MostrarDatos(estudiante7)">Enviar</button></td>
-      </tr>
-      <tr>
-        <td>{{ estudiante8.nombre }}</td>
-        <td>{{ estudiante8.apellido }}</td>
-        <td>{{ estudiante8.cedula }}</td>
-        <td>{{ estudiante8.carrera }}</td>
-        <td>{{ estudiante8.notas }}</td>
-        <td><button class="btn btn-primary btn-sm" (click)="MostrarDatos(estudiante8)">Enviar</button></td>
-      </tr>
-      <tr>
-        <td>{{ estudiante9.nombre }}</td>
-        <td>{{ estudiante9.apellido }}</td>
-        <td>{{ estudiante9.cedula }}</td>
-        <td>{{ estudiante9.carrera }}</td>
-        <td>{{ estudiante9.notas}}</td>
-        <td><button class="btn btn-primary btn-sm" (click)="MostrarDatos(estudiante9)">Enviar</button></td>
-      </tr>
-      <tr>
-        <td>{{ estudiante10.nombre }}</td>
-        <td>{{ estudiante10.apellido }}</td>
-        <td>{{ estudiante10.cedula }}</td>
-        <td>{{ estudiante10.carrera }}</td>
-        <td>{{ estudiante10.notas }}</td>
-        <td><button class="btn btn-primary btn-sm" (click)="MostrarDatos(estudiante10)">Enviar</button></td>
-      </tr>
-    </tbody>
-  </table>
+  <h2 class="mb-4">Lista de Estudiantes</h2>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Cédula</th>
+          <th>Carrera</th>
+          <th>Notas</th>
+          <th>Estado</th>
+          <th></th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let estudiante of estudiantes">
+          <td>{{ estudiante.nombre }}</td>
+          <td>{{ estudiante.apellido }}</td>
+          <td>{{ estudiante.cedula }}</td>
+          <td>{{ estudiante.carrera }}</td>
+          <td>{{ estudiante.notas }}</td>
+          <td>
+            <div *ngIf="estudiante.notas >= 70" class="badge bg-success">Aprobado</div>
+            <div *ngIf="estudiante.notas < 70" class="badge bg-danger">Reprobado</div>
+            
+          </td>
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="MostrarDatos(estudiante)">
+              Mostrar Datos
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h5 style="text-align: center;">
+      Total Estudiantes: {{estudiantes.length}}
+    </h5>
+  </div>
 </div>
 <br><br><br>
 <app-footer></app-footer>

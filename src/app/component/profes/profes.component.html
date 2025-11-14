@@ -2,62 +2,30 @@
 <div class="container my-5">
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col tarjeta-3d-contenedor">
+        <div *ngFor="let usuario of usuarios" class="col tarjeta-3d-contenedor">
             <div class="tarjeta-3d tarjeta-voltear">
                 <div class="card h-100 shadow">
                     <div class="card-body texte-center">
-                        <img src="images/elvis.png" alt="img" style="width: 95%;" class="elwis">
-                        <h5 class="card-title">{{ usuario1.nombre}}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{usuario1.profesion}}</h6>
-                        <p class="card-text">{{usuario1.descripcion}}</p>
-                        <div class="social-links mt-3">
-                            <a href="https://www.linkedin.com/in/elvis-pachacama-410018135?trk=pub-pbmap"
-                                class="social-icon">LinkedIn<i class="fa-brands fa-github "></i></a>
-                            <a href="https://www.youtube.com/@elvispachacamacabezas1522" class="social-icon">Youtube<i
-                                    class="fab fa-twitter"></i></a>
-                            <button class="btn btn-primary mt-3" (click)="mostrarDatos(usuario1)">Motrar Datos</button>
+                        <img src="{{usuario.img}}" alt="img" style="width: 95%;" class="elwis">
+                        <h5 class="card-title">{{ usuario.nombre}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{usuario.profesion}}</h6>
+                        <p class="card-text">{{usuario.descripcion}}</p>
+                            <button class="btn btn-primary mt-3" (click)="mostrarDatos(usuario)">Mostrar Datos</button>
+                            <div *ngIf="mostrarRedesSociales && usuario.redes && usuario.redes.length >0">
+                            <h5>Redes Sociales</h5>
+                          <div *ngFor="let red of usuario.redes">
+                            <a href="{{red.link}}" style="color: blue">
+                                <i class="{{red.icono}} fa-2x"></i> {{red.nombre}}
+                            </a>
+                          </div>
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="col tarjeta-3d-contenedor">
-            <div class="tarjeta-3d tarjeta-voltear">
-                <div class="card h-100 shadow">
-                    <div class="card-body texte-center">
-                        <img src="images/gabo.jpg" alt="img" style="width: 55% ; margin-left: 90px ;"
-                            (mouseover)="mostrarDatos(usuario2)">
-                        <h5 class="card-title" (mouseover)="mostrarDatos(usuario2)">{{ usuario2.nombre }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{usuario2.profesion}}</h6>
-                        <p class="card-text">{{usuario2.descripcion}}</p>
-                        <a [href]="usuario2.redes[0].link">
-                            <i [class]="usuario2.redes[0].icono"></i>{{usuario2.redes[0].nombre}}
-                        </a>
-                        <a [href]="usuario2.redes[1].link">
-                            <i [class]="usuario2.redes[1].icono"></i>{{usuario2.redes[1].nombre}}
-                        </a>
-                        <button class="btn btn-primary mt-3" (click)="mostrarDatos(usuario2)">Motrar Datos</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col tarjeta-3d-contenedor">
-            <div class="tarjeta-3d tarjeta-voltear">
-                <div class="card h-100 shadow">
-                    <div class="card-body texte-center">
-                        <img src="images/moni.jpg" alt="img" style="width: 75%; margin-left: 45px">
-                        <h5 class="card-title">{{ usuario3.nombre}}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{usuario3.profesion}}</h6>
-                        <p class="card-text">{{usuario3.descripcion}}</p>
-                        <button class="btn btn-primary mt-3" (mouseover)="mostrarDatos(usuario3)">Motrar Datos</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+<button class="btn btn-secondary mt-4"(click)="mostrarRedesSociales=!mostrarRedesSociales">{{mostrarRedesSociales ? 'ocultar' : 'mostrar'}} Redes Sociales </button>
+    
 <br><br><br><br><br><br><br><br><br><br><br>
 <app-footer></app-footer>
