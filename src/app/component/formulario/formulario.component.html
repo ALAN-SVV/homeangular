@@ -27,7 +27,7 @@
                     <label for="semestre" class="form-label">Semestre</label>
                 </div>
                  <div>
-                    <input id="edad" type="number" class="form-control" formControlName="edad" name="edad" >
+                    <input id="edad" type="text" class="form-control" formControlName="edad" name="edad" onkeypress="return /[ 0-9]/.test(event.key)">
                     <label for="edad" class="form-label">Edad</label>
                 </div>
                 
