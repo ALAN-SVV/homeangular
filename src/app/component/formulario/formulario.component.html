@@ -1,0 +1,43 @@
+    <app-navbar></app-navbar>
+    <br><br><br>
+    <div class="container texte-center">
+        <div class ="row">
+        </div>
+        <div class="row">
+        </div>
+        <div class="row">
+            <div class=" col-md-6 offset-md-3" style="color: rgb(122, 24, 24);">
+            <form class="login-form" action="javascript:void(0);" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                <h1>Formulario Reactivo</h1>
+                <div class="form-imput">
+                    <input type="text" id="name" class="form-control" formControlName="name" name="name" onkeypress="return /[a-zA-ZñÑ ]/.test(event.key)">
+                    <label for="name">Nombre</label>
+                </div>
+                <br>
+                <div class="form-input">
+                    <input id="cedula" type="text" class="form-control" formControlName="cedula" name="cadula">
+                    <label for="cedula" class="form-label">Cedula</label>
+                </div>
+                <div class="form-input">
+                    <input id="carrera" type="text" class="form-control" formControlName="carrera" name="carrera"  onkeypress="return /[a-zA-ZñÑ ]/.test(event.key)">
+                    <label for="carrera" class="form-label">Carrera</label >
+                </div>
+                <div>
+                    <input id="semestre" type="text" class="form-control" formControlName="semestre" name="semestre">
+                    <label for="semestre" class="form-label">Semestre</label>
+                </div>
+                 <div>
+                    <input id="edad" type="number" class="form-control" formControlName="edad" name="edad" >
+                    <label for="edad" class="form-label">Edad</label>
+                </div>
+                
+                
+                <button type="submit" class="btn btn-primary btn-ghost" style="background-color: rgb(77, 36, 116);">Enviar</button>
+            </form>
+        </div>
+        </div>
+        </div>
+    <br><br><br><br><br><br><br>
+    <app-footer></app-footer>|    
+
+
